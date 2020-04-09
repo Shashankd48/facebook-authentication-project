@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <title>Login|Facebook </title>
+</head>
+<body>
+    <div class="container text-center">
+        <!-- Ejs condition to check is user loggedIn -->
+        <%
+            if(!user){
+        %>
+            <h1 class="my-5 text-primary">
+                Facebook Authentication
+            </h1>
+            <a href="/login" class="btn btn-primary btn-lg">Login</a>
+
+        <!-- Else part -->
+        <%}
+            else{
+        %>
+            <p>
+                Hello <%= user.username %>
+                View your 
+                <a href="/profile" class="btn btn-info">
+                    Profile here
+                </a>
+            </p>
+        <% } %>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
