@@ -74,8 +74,6 @@ app.get('/login/facebook/callback',
         res.redirect('/profile');
 });
 
-
-
 // @route    -  Get   /profile
 // @desc    -   A route to profile page
 // @access  -   PRIVATE
