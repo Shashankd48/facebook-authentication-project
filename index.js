@@ -69,9 +69,10 @@ app.get('/login/facebook',
 // @access  -   PUBLIC
 app.get('/login/facebook/callback',
     passport.authenticate('facebook', { failureRedirect: '/login' }),
-    function(req, res) {
+    (req, res) => {
         // Successful authentication, redirect home.
-        res.redirect('/profile');
+        // res.redirect('/profile');
+        res.render('/profile');
 });
 
 // @route    -  Get   /profile
