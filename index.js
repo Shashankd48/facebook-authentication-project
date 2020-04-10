@@ -68,12 +68,12 @@ app.get('/login/facebook',
 // @desc    -   a route to facebook auth
 // @access  -   PUBLIC
 app.get('/login/facebook/callback',
-    passport.authenticate('facebook', { failureRedirect: '/login' }),
-    (req, res) => {
-        // Successful authentication, redirect home.
-        // res.redirect('/profile');
-        res.render('/profile');
-});
+    passport.authenticate('facebook', { successRedirect: '/profile', failureRedirect: '/login' }),
+    );
+
+//     (req, res) => {
+//         res.redirect('/profile');
+// }
 
 // @route    -  Get   /profile
 // @desc    -   A route to profile page
